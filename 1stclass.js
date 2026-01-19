@@ -94,13 +94,13 @@
 
 // forth class 19-01-2026
 
-function handlesubmit(event){
-    event.preventDefault()      
-    console.log("Form Submitted")
-}
+// function handlesubmit(event){
+//     event.preventDefault()      
+//     console.log("Form Submitted")
+// }
 
-const form= document.querySelector("form")
-form.addEventListener("submit", handlesubmit)
+// const form= document.querySelector("form")
+// form.addEventListener("submit", handlesubmit)
 
 
 // add, commit, push
@@ -112,3 +112,13 @@ form.addEventListener("submit", handlesubmit)
 // git branch -M main
 // git remote add origin https://github.com/Sagarkashyap71/javascriptWeb.git
 // git push -u origin main
+
+
+// const btn= document.querySelector("button")
+// const div= document.querySelector("div")
+// // const div2= document.querySelector("div2")
+
+// btn.addEventListener("click",function(){console.log("button")},true)
+// div.addEventListener("click",function(){console.log("div")},true)
+// div2.addEventListener("click",function(){console.log("div2")},true)
+
