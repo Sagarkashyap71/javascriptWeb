@@ -122,3 +122,42 @@
 // div.addEventListener("click",function(){console.log("div")},true)
 // div2.addEventListener("click",function(){console.log("div2")},true)
 
+
+// fifth class 23-01-2026
+
+// debugger
+// console.log(a)
+
+// var a= 78
+// let b= 345
+// console.log(a)
+// console.log(b)
+
+// function print(){
+//     let c= 45
+//     console.log(c)
+//     console.log("inside fn")
+// }
+
+// print()
+
+// debugger
+
+// function first(){
+//     second()
+// }
+
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+
+// first()
+
+
+// function infinite(){
+//     infinite()
+// }
+// infinite()

@@ -34,20 +34,22 @@
 // para6[0].innerHTML= "hello world"
 // para6[0].style.color="red"
 
-// const but1= document.querySelectorAll(".bclass")
+// const button= document.querySelectorAll(".bclass")
 // but1[0].classList.add("bclass")
 // but1[0].classList.remove("bclass")
 // but1[0].classList.toggle("bclass")
-// function messagebut1(){
-//     alert("Submitted Successfully !")
+// function message(){
+//     alert("Submitted")
 // }
-// but1[0].addEventListener("click",messagebut1)      // gives popup message
 
-// but1[1].addEventListener("click", function messagebut2(){
-//     but1[0].removeEventListener("click",messagebut1)
-// }) 
-
+// button[0].addEventListener("click", message)
+// function message2(){
+//     button[0].removeEventListener("click",message)
+// }
+// button[1].addEventListener("click",message2)
 // const but1= document.querySelectorAll(".bclass")
 // but1[0].addEventListener("keydown",function(event){
 //     console.log(event.key)
 // })
+
+const button= document.querySelectorAll("")
