@@ -52,4 +52,113 @@
 //     console.log(event.key)
 // })
 
-const button= document.querySelectorAll("")
+// const b= document.querySelectorAll(".bclass")
+// function message(){
+//     alert("Radhe Radhe")
+// }
+// b[0].addEventListener("click",message)
+// b[1].addEventListener("click",function message2(){
+//     b[0].removeEventListener("click",message)
+// })
+
+// const b= document.querySelectorAll(".bclass")
+// function message(){
+//     alert("Radhe Radhe")
+// }
+// b[0].addEventListener("mouseover",message)
+
+// const b= document.querySelectorAll(".bclass")
+// b[0].addEventListener("keydown",function message(event){
+//     console.log(event.key)
+// })
+
+// const b= document.querySelectorAll(".bclass")
+// b[0].addEventListener("keyup",function message(event){
+//     console.log(event.key)
+// })
+
+// const f= document.querySelector("form")
+// f.addEventListener("submit",function message(event){
+//     event.preventDefault()
+//     console.log("Submitted")
+// })
+
+
+// addEventListener : click, mouseover, keydown, keyup, submit
+
+// const b= document.querySelector(".child")
+// const d= document.querySelector(".parent")
+// d.addEventListener("click",()=>{
+//     console.log("parent")
+// },true)
+// b.addEventListener("click",()=>{
+//     console.log("child")
+// },true)
+
+// false= default= bubbling phase= in to out
+// true= non-default= capturiing phase= out to in
+
+// debugger
+// console.log(a)
+// let a= 10
+// var b= 20
+
+// function print(){
+//     let c= 45
+//     console.log(c)
+//     console.log("Inside function")
+// }
+
+// print()
+
+// debugger
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     forth()
+// }
+// function forth(){
+//     console.trace()
+// }
+// first()
+
+// function infinite(){              // stack will gets full
+//     infinite()
+// }
+// infinite()
+
+
+//                                  UNIT : 2 STARTS ->
+
+
+// console.log("First line")
+// setTimeout(()=>{
+//     console.log("after 2 seconds")
+// },2000)
+// console.log("second line")
+
+// setTimeout(()=>{
+//     console.log("after 5 seconds")
+// },5000)
+
+// const a= setInterval(()=>{
+//     console.log("after each 1 second")
+// },1000)
+
+// setInterval(()=>{
+//     clearInterval(a)
+// },10000)
+
+// question : print numbers from 1 to 10 with 1 second interval
+// let a= 1
+// const b= setInterval(()=>{
+//     console.log(a)
+//     a++
+//     if(a>10){
+//         clearInterval(b)
+//     }
+// })
