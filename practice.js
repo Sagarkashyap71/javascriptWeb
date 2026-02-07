@@ -162,3 +162,52 @@
 //         clearInterval(b)
 //     }
 // })
+
+
+
+//                                         unit - 2
+
+// syncronous programmming (line by line execution of code)
+
+// console.log("Hello")
+// setTimeout(() => {
+//     console.log("inside timeout")
+// }, 2000);
+// console.log("World")
+
+
+// asyncronous programming (execution of our code that we need)
+
+// setTimeout(() => {
+//     alert("Hello")
+// }, 2000);
+
+// const timer= setInterval(() => {
+//     console.log("Interval")
+// }, 1000);
+
+// setInterval(() => {
+//     clearInterval(timer)
+// }, 5000);
+
+// question : print numbers from 1 to 10 with 1 second interval
+
+// let i=1
+// const question= setInterval(() => {
+//     console.log(i)
+//     i++
+//     if(i>10){
+//         clearInterval(question)
+//     }
+// }, 1000);
+
+//  OR
+
+// let i= 1
+// const question= setInterval(() => {
+//     console.log(i)
+//     i++
+// }, 1000);
+// setInterval(() => {
+//     clearInterval(question)
+// }, 10000);

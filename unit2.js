@@ -42,7 +42,7 @@
 // console.log("First line")
 // setTimeout(() => {                  // behaves as asyncronous 
 //     console.log("After 2 sec")      // syntax : setTimeout(function,delay)
-// }, 0);
+// }, 0);       
 // console.log("Second line")
 
 // console.log("First line")
@@ -125,3 +125,127 @@
 //     }, 2000); 
 // }
 // greet(print())
+
+
+
+// const input= document.querySelector("#task")
+// const btn= document.querySelector(".btn")
+// const lists= document.querySelector(".list")
+
+// btn.addEventListener("click",(event)=>{
+//     event.preventDefault()
+//         if(input.value===""){
+//         alert("Enter Task")
+//         return
+//     }
+//     const li= document.createElement("li")
+//     const deletebutton= document.createElement("button")
+
+//     deletebutton.innerText="Delete"
+//     li.innerText= input.value
+
+//     li.appendChild(deletebutton)
+//     lists.appendChild(li)
+
+//     deletebutton.addEventListener("click",()=>{
+//         lists.removeChild(li)
+//     })
+//     input.value=""
+// })
+
+
+// syncronous : line by line execution 
+// asyncronous : code run in background
+
+//                                     class 3 (06-02-2026)
+
+// promise is an object of asyncronous programming that tells us that asyncronous programming code will be rejected/ resolve or default for pending 
+// const p= new Promise(function(resolve,reject){
+//     setTimeout(() => {
+//         let done= false;
+//         if(done){
+//             resolve({name:"Vasudev", age:12})
+//         }else{
+//             reject({message:"network issue"})
+//         }
+//     }, 5000);
+// })
+
+// console.log(p)
+
+// then works when resolves and catch works when rejects and finally will works for both reject and resolve
+// p.then((data)=>{
+//     console.log("resolved",data)
+// }).catch((err)=>{
+//     console.log("rejected",err)
+// }).finally(()=>{
+//     console.log("finally block")
+// })
+
+function dohomework(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=true
+            if(done){
+                console.log("homework is done")
+                resolve("homework complete")
+            }else{
+                reject("homework is not done")
+            }
+        },5000)
+    })
+    return p
+}
+
+
+
+
+
+function eatDinner(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=true
+            if(done){
+                console.log("dinner is done")
+                resolve("dinner complete")
+            }else{
+                reject("dinner is not done")
+            }
+        },5000)
+    })
+    return p
+}
+
+
+function goToPlayground(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=true
+            if(done){
+                console.log("went to playground")
+                resolve("playground time")
+            }else{
+                reject("not allowed to play")
+            }
+        },2000)
+    })
+    return p
+}
+
+
+
+dohomework().then((data)=>{
+    console.log(data)
+    return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
+}).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("go to sleep")
+})
+
+// callback - promise - 
