@@ -211,3 +211,30 @@
 // setInterval(() => {
 //     clearInterval(question)
 // }, 10000);
+
+
+// function print(name){
+//     console.log("Hello",name)
+// }
+
+// function greet(num){
+//     console.log("class")
+//     setTimeout(() => {
+//         console.log("inside timeout")
+//         let myname= "Sagar"
+//         num(myname)
+//     }, 2000);
+// }
+
+// greet(print)
+
+
+function fname(name1){
+    console.log(name1)
+}
+function lname(name2){
+    let name3= "Sagar"
+    name2(name3)
+    console.log("Kashyap")
+}
+lname(fname)
