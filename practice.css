@@ -4,3 +4,9 @@
     height:30px;
     color:white;
 }
+
+
+#Task{
+    border:2px solid black;
+    background-color: "blue";
+}

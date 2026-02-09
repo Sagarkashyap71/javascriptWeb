@@ -115,10 +115,10 @@
 // function print(name){                           // callback function = print
 //     console.log("hello students !",name)
 // }
-// function greet(num){                        // higher order function = greet
+// function greet(num){                            // higher order function = greet
 //     console.log("welcome to my class !")
-//     setTimeout(() => {                      // here, settimieout is higher order function
-//         console.log("inside timeout")       // here, num function will wait for executing settimeout function
+//     setTimeout(() => {                          // here, settimeout is higher order function
+//         console.log("inside timeout")           // here, num function will wait for executing settimeout function
 //         let firstname= "Janish Jaat"
 //         num(firstname)
 
@@ -128,29 +128,26 @@
 
 
 
-// const input= document.querySelector("#task")
+// const task= document.querySelector("#task")
 // const btn= document.querySelector(".btn")
 // const lists= document.querySelector(".list")
 
 // btn.addEventListener("click",(event)=>{
 //     event.preventDefault()
-//         if(input.value===""){
+//         if(task.value===""){
 //         alert("Enter Task")
 //         return
 //     }
-//     const li= document.createElement("li")
+//     const li= document.createElement("li")                     // this will create new element
 //     const deletebutton= document.createElement("button")
-
-//     deletebutton.innerText="Delete"
-//     li.innerText= input.value
-
-//     li.appendChild(deletebutton)
+//     deletebutton.innerText="Delete"                            // button for deletion of completed task 
+//     li.innerText= task.value
+//     li.appendChild(deletebutton)                               // appendChild for adding task in list
 //     lists.appendChild(li)
-
 //     deletebutton.addEventListener("click",()=>{
 //         lists.removeChild(li)
 //     })
-//     input.value=""
+//     task.value=""
 // })
 
 

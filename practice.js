@@ -229,12 +229,114 @@
 // greet(print)
 
 
-function fname(name1){
-    console.log(name1)
-}
-function lname(name2){
-    let name3= "Sagar"
-    name2(name3)
-    console.log("Kashyap")
-}
-lname(fname)
+// function fname(name1){
+//     console.log(name1)
+// }
+// function lname(name2){
+//     let name3= "Sagar"
+//     name2(name3)
+//     console.log("Kashyap")
+// }
+// lname(fname)
+
+
+// console.log("starting homework")
+// setTimeout(() => {
+//     console.log("homework done")
+//     console.log("starting lunch")
+//     setTimeout(() => {
+//         console.log("lunch done")
+//         console.log("going to playground")
+//         setTimeout(() => {
+//             console.log("practiced Javelin throw with Janish Bhattal")
+//             console.log("reached home and went to khet")
+//         }, 1000);
+//     }, 1500);
+// }, 2000);
+
+
+// function homework(callback){
+//     console.log("starting homework")
+//     setTimeout(()=>{
+//         console.log("homework done")
+//         callback()
+//     },2000)
+// }
+
+// function dinner(callback){
+//     console.log("starting dinner")
+//     setTimeout(()=>{
+//         console.log("dinner done")
+//         callback()
+//     },2000)
+// }
+
+// function stadium(callback){
+//     console.log("going to karan stadium, Karnal")
+//     setTimeout(()=>{
+//         console.log("practiced Javelin Throw with my friend Janish Bhattal")
+//     },2000)
+// }
+
+// homework(()=>{
+//     dinner(()=>{
+//         stadium()
+//     })
+// })
+
+
+
+// const task= document.querySelector("#task")
+// const btn= document.querySelector("#btn")
+// const lists= document.querySelector(".list")
+
+// btn.addEventListener("click",(event)=>{
+//     event.preventDefault()
+//     if(task.value===""){
+//         alert("Enter Task")
+//         return
+//     }
+//     const li= document.createElement("li")                     // this will create new element
+//     const deletebutton= document.createElement("button")
+//     deletebutton.innerText="Delete"                            // button for deletion of completed task 
+//     li.innerText= task.value
+//     li.appendChild(deletebutton)                               // appendChild for adding task in list
+//     lists.appendChild(li)
+//     deletebutton.addEventListener("click",()=>{
+//         lists.removeChild(li)
+//     })
+//     task.value=""
+// })
+
+
+// steps :       
+// 1. make task, button, list
+// 2. add event listener for clicking 
+// 3. condition for value checking 
+// 4. create element for list element
+// 5. create element for delete button
+// 6. add delete text in button
+// 7. append element into list element
+// 8. append list element into list 
+// 9. add event for deleting element from list
+
+
+const task= document.querySelector("#task")
+const button= document.querySelector("#btn")
+const list= document.querySelector(".list")
+
+button.addEventListener("click",(event)=>{
+    event.preventDefault()
+    if (task.value === ""){
+        alert("Enter Task")
+    }
+    const li= document.createElement("listElement")
+    const del= document.createElement("deleteElement")
+    del.innerText("Delete")
+    li.appendChild(task.value)
+    list.appendChild(li)
+    del.addEventListener("click",()=>{
+        list.removeChild("li")
+    })
+    task.value=""
+})
