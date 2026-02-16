@@ -70,7 +70,7 @@
 // }
 // greet(print)
 
-// callback hell
+// callback hell   (problem that held in writing number of lines of code so that, whole program got wrong)
 
 // console.log("starting homework...")
 // setTimeout(() => {
@@ -179,70 +179,116 @@
 //     console.log("finally block")
 // })
 
-function dohomework(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=true
-            if(done){
-                console.log("homework is done")
-                resolve("homework complete")
-            }else{
-                reject("homework is not done")
-            }
-        },5000)
-    })
-    return p
-}
+// function dohomework(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("homework is done")
+//                 resolve("homework complete")
+//             }else{
+//                 reject("homework is not done")
+//             }
+//         },5000)
+//     })
+//     return p
+// }
 
 
 
 
 
-function eatDinner(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=true
-            if(done){
-                console.log("dinner is done")
-                resolve("dinner complete")
-            }else{
-                reject("dinner is not done")
-            }
-        },5000)
-    })
-    return p
-}
+// function eatDinner(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("dinner is done")
+//                 resolve("dinner complete")
+//             }else{
+//                 reject("dinner is not done")
+//             }
+//         },5000)
+//     })
+//     return p
+// }
 
 
-function goToPlayground(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=true
-            if(done){
-                console.log("went to playground")
-                resolve("playground time")
-            }else{
-                reject("not allowed to play")
-            }
-        },2000)
-    })
-    return p
-}
+// function goToPlayground(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("went to playground")
+//                 resolve("playground time")
+//             }else{
+//                 reject("not allowed to play")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
 
 
 
-dohomework().then((data)=>{
-    console.log(data)
-    return eatDinner()
-}).then((data)=>{
-    console.log(data)
-    return goToPlayground()
-}).then((data)=>{
-    console.log(data)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("go to sleep")
+// dohomework().then((data)=>{
+//     console.log(data)
+//     return eatDinner()
+// }).then((data)=>{
+//     console.log(data)
+//     return goToPlayground()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("go to sleep")
+// })
+
+
+
+//                                         Class 4 (09-02-2026)
+
+// callback(settimeout) - promise - 
+
+// timeout and promise behaves as asyncronously and priority of promise is higher than timeout
+
+// important topics of js : code execution, memory allocation, event loop
+
+// Event loop : how to they know that it is there turn in execution
+
+// Web API uses setTimeout, fetch,  addeventlistener, keydown, web workers (api is engine present on browser)
+
+// js have three components in background : 1. call stack 2. callback queue(macro queue) 3.Web API 4. Priority Queue(micro queue) 
+
+//                               task queue are callback queue and priority queue
+
+// Event loop is like manager or guard that manages flow of task queue, call stack OR between WebAPI and call stack
+
+// Interviewer mainly asks questions from two topics : event loop , execution context so, these topics are important
+
+
+console.log("First line")                         // stores in callstack and execute first
+setTimeout(()=>{                                  // went to Web API for 2 seconds, then in macrotask, then in callstack
+    console.log("Inside timeout")
+},2000)
+const p1= new Promise((resolve, reject)=>{        // went to microtask, then in call stack
+    resolve()
 })
+p1.then(()=>{           
+    console.log("Inside promise")
+}).catch(()=>{
+    console.log("Inside promise reject")
+})
+const p2= new Promise((resolve, reject)=>{        // went to microtask, then in call stack after p1 execute as of principle of queue (FIFO)
+    resolve()
+})
+p2.then(()=>{
+    console.log("inside promise 2")
+}).catch(()=>{
+    console.log("inside promise 2 reject")
+})
+console.log("Last line")                          // stores in call stack and execute second as of principle of stack (LIFO)
 
-// callback - promise - 
+
+// Async/Awaits

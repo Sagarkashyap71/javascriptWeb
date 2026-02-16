@@ -308,19 +308,6 @@
 //     task.value=""
 // })
 
-
-// steps :       
-// 1. make task, button, list
-// 2. add event listener for clicking 
-// 3. condition for value checking 
-// 4. create element for list element
-// 5. create element for delete button
-// 6. add delete text in button
-// 7. append element into list element
-// 8. append list element into list 
-// 9. add event for deleting element from list
-
-
 const task= document.querySelector("#task")
 const button= document.querySelector("#btn")
 const list= document.querySelector(".list")
@@ -329,12 +316,13 @@ button.addEventListener("click",(event)=>{
     event.preventDefault()
     if (task.value === ""){
         alert("Enter Task")
+        return
     }
     const li= document.createElement("listElement")
     const del= document.createElement("deleteElement")
-    del.innerText("Delete")
+    del.innerText="Delete"
     li.appendChild(task.value)
-    list.appendChild(li)
+    li.appendChild(li)
     del.addEventListener("click",()=>{
         list.removeChild("li")
     })
