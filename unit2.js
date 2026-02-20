@@ -268,27 +268,63 @@
 // Interviewer mainly asks questions from two topics : event loop , execution context so, these topics are important
 
 
-console.log("First line")                         // stores in callstack and execute first
-setTimeout(()=>{                                  // went to Web API for 2 seconds, then in macrotask, then in callstack
-    console.log("Inside timeout")
-},2000)
-const p1= new Promise((resolve, reject)=>{        // went to microtask, then in call stack
-    resolve()
-})
-p1.then(()=>{           
-    console.log("Inside promise")
-}).catch(()=>{
-    console.log("Inside promise reject")
-})
-const p2= new Promise((resolve, reject)=>{        // went to microtask, then in call stack after p1 execute as of principle of queue (FIFO)
-    resolve()
-})
-p2.then(()=>{
-    console.log("inside promise 2")
-}).catch(()=>{
-    console.log("inside promise 2 reject")
-})
-console.log("Last line")                          // stores in call stack and execute second as of principle of stack (LIFO)
+// console.log("First line")                         // stores in callstack and execute first
+// setTimeout(()=>{                                  // went to Web API for 2 seconds, then in macrotask, then in callstack
+//     console.log("Inside timeout")
+// },2000)
+// const p1= new Promise((resolve, reject)=>{        // went to microtask, then in call stack
+//     resolve()
+// })
+// p1.then(()=>{           
+//     console.log("Inside promise")
+// }).catch(()=>{
+//     console.log("Inside promise reject")
+// })
+// const p2= new Promise((resolve, reject)=>{        // went to microtask, then in call stack after p1 execute as of principle of queue (FIFO)
+//     resolve()
+// })
+// p2.then(()=>{
+//     console.log("inside promise 2")
+// }).catch(()=>{
+//     console.log("inside promise 2 reject")
+// })
+// console.log("Last line")                          // stores in call stack and execute second as of principle of stack (LIFO)
 
 
 // Async/Awaits
+
+//                       class 5 missed (16-02-2026)
+
+//   error handling(try, catch), fix error, awaits, throw keyword(generate manual error), etc
+//   see dummyjson.com for revision
+
+
+//                       class 6 (20-02-2026)
+
+// fetch api : get data from internet or send data to 
+//             a server in which fetch() function works.
+
+
+async function sendData(){
+    try{
+        const response = await fetch("https://dummyjson.com/product/add",{
+            method: "post",
+            headers: {"content-type":"application/json"},
+            body: JSON.stringify({
+                title:"macbook",
+                discription: "macbook Pro",
+                price:100000,
+                discountPercentage: 5,
+                rating: 4.5,
+                stock: 5,
+                brand: "apple"
+            })
+        })
+
+        const data = await response.json()
+        console.log(data)
+    }catch(error){
+        console.log("data not found")
+    }
+}
+sendData()
